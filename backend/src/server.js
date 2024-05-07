@@ -13,7 +13,9 @@ const videosRoute = require("./routes/videoRoute.js")
 const gptRoute = require("./routes/gptRoute.js")
 const cloudinary = require("cloudinary").v2;
 
+
 const app = express();
+const port = process.env.PORT || 3000;
 
 cloudinary.config({ 
   cloud_name: `${process.env.CLOUDINARY_NAME}`, 
@@ -37,6 +39,6 @@ app.use("/api/gpt", gptRoute)
 
 
 
-app.listen(3001, () => {
+app.listen(port, () => {
   console.log(`Server is running on port ${3001}`);
 });
